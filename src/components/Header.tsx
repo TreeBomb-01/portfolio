@@ -9,8 +9,8 @@ export default function Header() {
     { name: '홈', href: '#home' },
     { name: '소개', href: '#about' },
     { name: '스킬', href: '#skills' },
-    { name: '프로젝트', href: '#projects' },
-    { name: '연락처', href: '#contact' },
+    { name: '프로젝트', href: '#projects' }//,
+    //{ name: '연락처', href: '#contact' },
   ]
 
   return (

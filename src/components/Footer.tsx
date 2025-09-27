@@ -21,7 +21,7 @@ export default function Footer() {
               <li><a href="#about" className="text-gray-300 hover:text-gray-400 transition-colors">소개</a></li>
               <li><a href="#skills" className="text-gray-300 hover:text-gray-400 transition-colors">스킬</a></li>
               <li><a href="#projects" className="text-gray-300 hover:text-gray-400 transition-colors">프로젝트</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-gray-400 transition-colors">연락처</a></li>
+              {/* <li><a href="#contact" className="text-gray-300 hover:text-gray-400 transition-colors">연락처</a></li> */}
             </ul>
           </div>
 
@@ -29,8 +29,8 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">연락처</h4>
             <div className="space-y-2 text-gray-300">
-              <p>📧 contact@backend-dev.com</p>
-              <p>� 백엔드 개발 전문</p>
+              <p>📧 htb010630@gmail.com</p>
+              {/* <p>� 백엔드 개발 전문</p>
               <div className="flex space-x-4 mt-4">
                 <a href="#" className="text-gray-300 hover:text-gray-400 transition-colors">
                   GitHub
@@ -41,14 +41,14 @@ export default function Footer() {
                 <a href="#" className="text-gray-300 hover:text-gray-400 transition-colors">
                   Tech Blog
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 Backend Developer Portfolio. All rights reserved.
+            © 2025 Backend Developer Portfolio. All rights reserved.
           </p>
         </div>
       </div>

@@ -30,12 +30,12 @@ export default function Hero() {
             >
               프로젝트 보기
             </a>
-            <a 
+            {/* <a 
               href="#contact"
               className="border-2 border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
             >
               연락하기
-            </a>
+            </a> */}
           </div>
 
           {/* Scroll Down Indicator */}
