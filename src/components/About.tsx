@@ -26,24 +26,26 @@ export default function About() {
             
             <div>
               <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                안정적인 시스템을 구축하는 백엔드 개발자
+                안정성과 확장성을 중시하는 백엔드 개발자
               </h3>
               
               <div className="space-y-4 text-gray-600">
                 <p>
-                  서버 사이드 개발과 시스템 아키텍처 설계에 집중하는 백엔드 개발자입니다. 
-                  확장 가능하고 안정적인 서버 시스템을 구축하여 비즈니스 로직을 효율적으로 
-                  처리할 수 있도록 하는 것이 목표입니다.
+                  안정적이고 확장 가능한 서버 아키텍처 구축에 집중하는 백엔드 개발자입니다. 
+                  프로젝트와 공모전을 통해 단순 기능 구현을 넘어서 운영 효율성과 신뢰성을 높이는 시스템 설계를 경험했습니다. 
+                  사소한 장애도 곧바로 사용자 신뢰와 연결되는 금융 서비스 특성을 염두에 두고, 
+                  안정성과 확장성을 동시에 만족하는 서비스를 만드는 것을 목표로 하고 있습니다.
                 </p>
                 
                 <p>
-                  Node.js, Java, Python 등 다양한 백엔드 기술을 활용하며, 
-                  RESTful API 설계와 데이터베이스 최적화에 관심이 많습니다.
+                  Java, Spring Boot, JPA를 활용한 백엔드 개발 경험과 PostgreSQL·MySQL 기반 데이터베이스 설계 경험을 보유하고 있습니다. 
+                  또한 Redis Streams 기반 작업 큐, Docker·Jenkins를 통한 CI/CD 파이프라인, 
+                  VPN·Reverse Proxy를 통한 보안 설계 등 다양한 인프라 경험을 통해 운영 환경 전반을 고려한 백엔드 역량을 다져왔습니다.
                 </p>
                 
                 <p>
-                  클린 코드 작성과 효율적인 알고리즘 구현을 통해 
-                  성능과 유지보수성을 모두 고려한 시스템을 개발합니다.
+                  효율적인 설계와 운영 개선을 통해 처리 속도를 단축하고 안정성을 강화했던 경험을 살려, 
+                  신뢰할 수 있는 백엔드 시스템을 구축하는 데 기여하고자 합니다.
                 </p>
               </div>
 
@@ -54,23 +56,27 @@ export default function About() {
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-gray-700 rounded-full mr-3"></span>
-                    RESTful API 설계 및 개발
+                    안정성과 확장성을 고려한 서버 아키텍처 설계
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-gray-700 rounded-full mr-3"></span>
-                    데이터베이스 모델링 및 최적화
+                    RESTful API 설계 및 개발, 최적화
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-gray-700 rounded-full mr-3"></span>
-                    서버 성능 최적화
+                    데이터베이스 모델링 및 성능 개선
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-gray-700 rounded-full mr-3"></span>
-                    마이크로서비스 아키텍처
+                    분산 처리 및 대규모 트래픽 대응
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-gray-700 rounded-full mr-3"></span>
-                    클라우드 인프라 구축
+                    CI/CD 자동화 및 운영 효율화
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-gray-700 rounded-full mr-3"></span>
+                    클라우드·보안 환경에서의 안정적 서비스 운영
                   </li>
                 </ul>
               </div>

@@ -12,14 +12,15 @@ export default function Hero() {
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-            안녕하세요!👋<br />
-            <span className="text-gray-700">백엔드 개발자</span><br />
+            안녕하세요!<br />
+            끊임없이 배우고 성장하는 <br />
+            <span className="text-gray-700">백엔드 개발자</span>
             입니다
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             안정적이고 확장 가능한 서버 시스템을 구축합니다.<br />
-            효율적인 API 설계와 데이터 처리에 집중하며, 새로운 기술을 학습하고 적용하는 것을 즐깁니다.
+            효율적인 API 설계와 데이터 처리에 집중하며 새로운 기술을 학습하고 적용하는 것을 즐깁니다.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">

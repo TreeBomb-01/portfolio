@@ -3,7 +3,8 @@
 import { useState } from 'react'
 
 export default function Projects() {
-    const [activeTab, setActiveTab] = useState<{ [key: number]: 'tech' | 'contributions' }>({})
+    const [activeTab, setActiveTab] = useState<{ [key: number]: 'tech' | 'contributions' | undefined }>({})
+    const [expandedProjects, setExpandedProjects] = useState<{ [key: number]: boolean }>({})
 
     const projects = [
         {
@@ -16,12 +17,12 @@ export default function Projects() {
             contributions: [
                 {
                     title: "백엔드 서버 설계 및 구현",
-                    description: "Spring Boot 기반 RESTful API 설계/구현, 인증/에러 표준화, 페이징/검색 최적화 (API p95 지연 감소)",
+                    description: "Spring Boot 기반 RESTful API 설계/구현, 인증/에러 표준화, 페이징/검색 최적화",
                     technologies: ["Spring Boot", "JPA", "MyBatis", "MySQL"]
                 },
                 {
                     title: "서버 인프라 구축 및 자동화",
-                    description: "Docker·Jenkins·OpenStack으로 CI/CD 파이프라인 구축, 브랜치별 자동 배포 및 롤백 (배포 시간 단축)",
+                    description: "Docker·Jenkins·OpenStack으로 CI/CD 파이프라인 구축, 브랜치별 자동 배포 및 롤백",
                     technologies: ["Docker", "Jenkins", "OpenStack"]
                 },
                 {
@@ -60,26 +61,26 @@ export default function Projects() {
             contributions: [
                 {
                     title: "백엔드 서버 설계 및 구현",
-                    description: "Spring Boot 기반 RESTful API 설계/구현, 인증/에러 표준화, 페이징/검색 최적화 (API p95 지연 감소)",
-                    technologies: ["Spring Boot", "JPA", "PostgreSQL"]
+                    description: "Spring Boot 기반 RESTful API 설계/구현, 인증/에러 표준화, JWT 기반 인증/인가 구현",
+                    technologies: ["Spring Boot", "Spring Security", "JPA", "PostgreSQL", "WebSocket", "Kakao login API"]
+                },
+                {
+                    title: "AI 기반 운동 자세 분석 및 모델 서빙 시스템",
+                    description: "영상 데이터 기반 운동 자세 분석 모델 개발 및 서빙",
+                    technologies: ["FastAPI", "MediaPipe", "openCV"]
                 },
                 {
                     title: "서버 인프라 구축 및 자동화",
-                    description: "Docker·Jenkins·OpenStack으로 CI/CD 파이프라인 구축, 브랜치별 자동 배포 및 롤백 (배포 시간 단축)",
+                    description: "Docker·Jenkins·OpenStack으로 CI/CD 파이프라인 구축, 브랜치별 자동 배포",
                     technologies: ["Docker", "Jenkins", "proxmox"]
                 },
                 {
                     title: "파일 업로드 및 이미지 처리",
                     description: "AWS S3를 활용한 파일 업로드 및 관리",
                     technologies: ["AWS S3", "MinIO"]
-                },
-                {
-                    title: "파일 업로드 및 이미지 처리",
-                    description: "영상 데이터 기반 운동 자세 분석 모델 개발 및 서빙",
-                    technologies: ["FastAPI", "MediaPipe", "openCV"]
                 }
             ],
-            technologies: ["Spring boot", "JPA", "MyBatis", "WebSocket", "FastAPI", "MediaPipe", "openCV", "PostgreSQL", "AWS S3", "Docker", "Jenkins"],
+            technologies: ["Spring boot", "Spring Security", "JPA", "MyBatis", "WebSocket", "FastAPI", "MediaPipe", "openCV", "PostgreSQL", "AWS S3", "Proxmox", "Docker", "Jenkins"],
             demoUrl: "#",
             githubUrl: "https://github.com/LevelUpFit",
             featured: true
@@ -106,63 +107,63 @@ export default function Projects() {
         {
             id: 4,
             title: "데이트코스 추천 웹앱 프로젝트",
-            description: "사용자의 개개인의 취미에 맞춰 데이트 코스 추천 및 계획 윕앱 구축",
+            description: "사용자의 개인의 취미에 맞춰 데이트 코스 추천 및 계획 웹앱 구축",
             category: "캡스톤디자인",
             period: "2023.09 - 2023.12 (3개월)",
             image: "from-orange-500 to-orange-700",
             contributions: [
                 {
-                    title: "마이크로서비스 아키텍처 설계",
-                    description: "도메인 기반 서비스 분리 및 독립적 배포 가능한 아키텍처 설계",
-                    technologies: ["Node.js", "Express", "MongoDB"]
+                    title: "기획 및 아키텍처 설계",
+                    description: "팀장으로 전체적인 아키텍처의 설계와 운영을 담당",
+                    technologies: []
                 },
                 {
-                    title: "API Gateway 구현",
-                    description: "Nginx 기반 API Gateway 및 로드밸런싱 시스템 구축",
-                    technologies: ["Nginx", "Docker", "Consul"]
-                }
+                    title: "백엔드 서버 설계 및 구현",
+                    description: "Spring Boot 기반 RESTful API 설계/구현, 인증/에러 표준화",
+                    technologies: ["Spring Boot", "Spring Security", "MyBatis", "MySQL", "Kakao login API"]
+                },
             ],
-            technologies: ["Docker", "Kubernetes", "Node.js", "Nginx", "MongoDB", "Consul"],
+            technologies: ["Spring Boot", "Spring Security", "MyBatis", "MySQL", "Kakao login API"],
             demoUrl: "#",
-            githubUrl: "#",
+            githubUrl: "https://github.com/cosecose",
             featured: false
         },
         {
             id: 5,
-            title: "데이터 분석 API",
-            description: "대용량 데이터 처리를 위한 분석 API입니다. 데이터 파이프라인을 구축하고 실시간 데이터 처리 및 시각화를 지원합니다.",
-            category: "개인",
-            period: "2023.05 - 2023.07 (3개월)",
+            title: "숙박 예약 시스템",
+            description: "숙박 예약 웹 서비스를 벤치마킹하여 Spring Boot을 활용해 구현한 프로젝트입니다.",
+            category: "코리아 IT 아카데미",
+            period: "2024.02 - 2024.02 (1개월)",
             image: "from-red-500 to-red-700",
             contributions: [
                 {
-                    title: "대용량 데이터 처리 파이프라인 구축",
-                    description: "Apache Kafka를 활용한 실시간 데이터 스트리밍 파이프라인 개발",
-                    technologies: ["Apache Kafka", "Python", "Pandas"]
+                    title: "숙박 업소 카테고리 및 정보 관리",
+                    description: "숙박 업소 카테고리 분류 및 기본 정보 관리 기능 구현",
+                    technologies: ["Spring", "Oracle DB"]
                 }
             ],
-            technologies: ["Python", "FastAPI", "Apache Kafka", "ElasticSearch", "Pandas"],
+            technologies: ["Spring"],
             demoUrl: "#",
-            githubUrl: "#",
+            githubUrl: "https://github.com/TreeBomb-01/web",
             featured: false
         },
         {
             id: 6,
-            title: "인증 서버",
-            description: "OAuth 2.0과 JWT를 활용한 중앙 집중식 인증 서버입니다. 다중 애플리케이션에서 사용할 수 있는 SSO(Single Sign-On) 기능을 제공합니다.",
-            category: "개인",
-            period: "2023.02 - 2023.04 (3개월)",
+            title: "쇼핑몰 서비스 구현",
+            description: "Java GUI를 통해 상품 관리, 회원 관리, 주문 관리 기능을 제공하는 쇼핑몰 서비스 구현",
+            category: "코리아 IT 아카데미",
+            period: "2023.11 - 2023.11 (1개월)",
             image: "from-indigo-500 to-indigo-700",
             contributions: [
                 {
-                    title: "OAuth 2.0 프로토콜 기반 인증 서버 구현",
-                    description: "Spring Security OAuth2를 활용한 인증/인가 서버 개발",
-                    technologies: ["Spring Security", "OAuth 2.0", "JWT"]
+                    title: "상품 등록 및 관리 기능 구현",
+                    description: "Java GUI를 통해 상품 등록 및 관리 기능을 구현",
+                    technologies: ["Java", "SourceTree"]
                 }
             ],
-            technologies: ["Java", "Spring Security", "OAuth 2.0", "MySQL", "JWT"],
+            technologies: ["Java", "SourceTree"],
             demoUrl: "#",
-            githubUrl: "#",
+            githubUrl: "https://github.com/TreeBomb-01/WebMiniProject",
             featured: false
         }
     ]
@@ -186,9 +187,9 @@ export default function Projects() {
                     {/* Featured Projects */}
                     <div className="mb-16">
                         <h3 className="text-2xl font-bold text-gray-800 mb-8">주요 프로젝트</h3>
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <div className="grid md:grid-cols-2 gap-8 items-start">
                             {featuredProjects.map((project) => (
-                                <div key={project.id} className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                                <div key={project.id} className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-fit">
                                     <div className={`h-48 bg-gradient-to-r ${project.image} relative overflow-hidden`}>
                                         <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                                         <div className="absolute top-3 right-3">
@@ -270,18 +271,40 @@ export default function Projects() {
                                         </div>
 
                                         <div className="flex gap-4">
-                                            <a
-                                                href={project.demoUrl}
-                                                className="flex-1 bg-gray-700 hover:bg-gray-800 text-white py-2 px-4 rounded-lg font-medium transition-colors text-center"
-                                            >
-                                                데모 보기
-                                            </a>
-                                            <a
-                                                href={project.githubUrl}
-                                                className="flex-1 border-2 border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white py-2 px-4 rounded-lg font-medium transition-colors text-center"
-                                            >
-                                                GitHub
-                                            </a>
+                                            {project.demoUrl && project.demoUrl !== '#' ? (
+                                                <a
+                                                    href={project.demoUrl}
+                                                    className="flex-1 bg-gray-700 hover:bg-gray-800 text-white py-2 px-4 rounded-lg font-medium transition-colors text-center"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    데모 보기
+                                                </a>
+                                            ) : (
+                                                <button
+                                                    disabled
+                                                    className="flex-1 bg-gray-400 text-gray-600 py-2 px-4 rounded-lg font-medium cursor-not-allowed text-center"
+                                                >
+                                                    데모 보기
+                                                </button>
+                                            )}
+                                            {project.githubUrl && project.githubUrl !== '#' ? (
+                                                <a
+                                                    href={project.githubUrl}
+                                                    className="flex-1 border-2 border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white py-2 px-4 rounded-lg font-medium transition-colors text-center"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    GitHub
+                                                </a>
+                                            ) : (
+                                                <button
+                                                    disabled
+                                                    className="flex-1 border-2 border-gray-400 text-gray-400 py-2 px-4 rounded-lg font-medium cursor-not-allowed text-center"
+                                                >
+                                                    GitHub
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -292,9 +315,9 @@ export default function Projects() {
                     {/* Other Projects */}
                     <div>
                         <h3 className="text-2xl font-bold text-gray-800 mb-8">기타 프로젝트</h3>
-                        <div className="grid md:grid-cols-3 gap-6">
+                        <div className="grid md:grid-cols-3 gap-6 items-start">
                             {otherProjects.map((project) => (
-                                <div key={project.id} className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+                                <div key={project.id} className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 h-fit">
                                     <div className={`h-32 bg-gradient-to-r ${project.image} relative`}>
                                         <div className="absolute top-2 right-2">
                                             <span className="text-xs text-white bg-black bg-opacity-60 px-2 py-1 rounded-full backdrop-blur-sm">
@@ -308,7 +331,14 @@ export default function Projects() {
                                             <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full font-medium">
                                                 {project.category}
                                             </span>
+                                            <button
+                                                onClick={() => setExpandedProjects(prev => ({ ...prev, [project.id]: !prev[project.id] }))}
+                                                className="text-gray-500 hover:text-gray-700 transition-colors p-1 text-xs"
+                                            >
+                                                {expandedProjects[project.id] ? '접기' : '펼치기'}
+                                            </button>
                                         </div>
+                                        
                                         <h4 className="text-lg font-semibold text-gray-800 group-hover:text-gray-900 transition-colors mb-2">
                                             {project.title}
                                         </h4>
@@ -317,41 +347,115 @@ export default function Projects() {
                                             {project.description}
                                         </p>
 
-                                        {/* 주요 기여 사항 (간략) */}
-                                        <div className="mb-2">
-                                            <p className="text-xs font-medium text-gray-700 mb-1">주요 기여:</p>
-                                            <p className="text-xs text-gray-600 line-clamp-2">
-                                                {project.contributions[0]?.title}
-                                            </p>
+                                        {/* 기술 스택 섹션 */}
+                                        <div className="mb-3">
+                                            <div className="flex items-start gap-2 mb-2">
+                                                <span className="text-xs font-medium text-gray-700 whitespace-nowrap">기술 스택:</span>
+                                                <div className="flex flex-wrap gap-1 flex-1">
+                                                    {expandedProjects[project.id] ? (
+                                                        // 모든 기술 스택 표시
+                                                        project.technologies.map((tech) => (
+                                                            <span key={tech} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                                                                {tech}
+                                                            </span>
+                                                        ))
+                                                    ) : (
+                                                        // 처음 3개 + 더보기 버튼
+                                                        <>
+                                                            {project.technologies.slice(0, 3).map((tech) => (
+                                                                <span key={tech} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                                                                    {tech}
+                                                                </span>
+                                                            ))}
+                                                            {project.technologies.length > 3 && (
+                                                                <span className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded">
+                                                                    +{project.technologies.length - 3}
+                                                                </span>
+                                                            )}
+                                                        </>
+                                                    )}
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        {/* 사용 기술 */}
-                                        <div className="flex flex-wrap gap-1 mb-3">
-                                            {project.technologies.slice(0, 3).map((tech) => (
-                                                <span key={tech} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                            {project.technologies.length > 3 && (
-                                                <span className="px-2 py-1 text-gray-500 text-xs">
-                                                    +{project.technologies.length - 3}
-                                                </span>
+                                        {/* 기여사항 섹션 */}
+                                        <div className="mb-3">
+                                            <div className="mb-2">
+                                                <span className="text-xs font-medium text-gray-700">주요 기여:</span>
+                                                <div className="flex items-center gap-1 mt-1">
+                                                    {!expandedProjects[project.id] ? (
+                                                        // 접힌 상태: 첫 번째 기여만 텍스트로 표시
+                                                        <>
+                                                            <p className="text-xs text-gray-600 line-clamp-1 flex-1">
+                                                                {project.contributions[0]?.title}
+                                                            </p>
+                                                            {project.contributions.length > 1 && (
+                                                                <span className="px-2 py-1 bg-green-100 text-green-600 text-xs rounded whitespace-nowrap">
+                                                                    +{project.contributions.length - 1}
+                                                                </span>
+                                                            )}
+                                                        </>
+                                                    ) : null}
+                                                </div>
+                                            </div>
+                                            
+                                            {/* 확장된 기여사항 */}
+                                            {expandedProjects[project.id] && (
+                                                <div className="bg-gray-50 p-2 rounded mb-2 space-y-2">
+                                                    {project.contributions.map((contribution, index) => (
+                                                        <div key={index} className="bg-white p-2 rounded shadow-sm border-l-2 border-green-300">
+                                                            <p className="text-xs font-medium text-gray-800 mb-1">{contribution.title}</p>
+                                                            <p className="text-xs text-gray-600 mb-1">{contribution.description}</p>
+                                                            <div className="flex flex-wrap gap-1">
+                                                                {contribution.technologies.map((tech) => (
+                                                                    <span key={tech} className="px-1 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">
+                                                                        {tech}
+                                                                    </span>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
                                             )}
                                         </div>
 
+
+
                                         <div className="flex gap-2">
-                                            <a
-                                                href={project.demoUrl}
-                                                className="flex-1 bg-gray-700 hover:bg-gray-800 text-white py-1 px-3 rounded text-sm font-medium transition-colors text-center"
-                                            >
-                                                데모
-                                            </a>
-                                            <a
-                                                href={project.githubUrl}
-                                                className="flex-1 border border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white py-1 px-3 rounded text-sm font-medium transition-colors text-center"
-                                            >
-                                                코드
-                                            </a>
+                                            {project.demoUrl && project.demoUrl !== '#' ? (
+                                                <a
+                                                    href={project.demoUrl}
+                                                    className="flex-1 bg-gray-700 hover:bg-gray-800 text-white py-1 px-3 rounded text-sm font-medium transition-colors text-center"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    데모
+                                                </a>
+                                            ) : (
+                                                <button
+                                                    disabled
+                                                    className="flex-1 bg-gray-400 text-gray-600 py-1 px-3 rounded text-sm font-medium cursor-not-allowed text-center"
+                                                >
+                                                    데모
+                                                </button>
+                                            )}
+                                            {project.githubUrl && project.githubUrl !== '#' ? (
+                                                <a
+                                                    href={project.githubUrl}
+                                                    className="flex-1 border border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white py-1 px-3 rounded text-sm font-medium transition-colors text-center"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    GitHub
+                                                </a>
+                                            ) : (
+                                                <button
+                                                    disabled
+                                                    className="flex-1 border border-gray-400 text-gray-400 py-1 px-3 rounded text-sm font-medium cursor-not-allowed text-center"
+                                                >
+                                                    GitHub
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -362,8 +466,7 @@ export default function Projects() {
                     {/* Skills Summary */}
                     <div className="mt-16 text-center">
                         <p className="text-gray-600 max-w-3xl mx-auto">
-                            모든 프로젝트는 클린 코드 원칙과 SOLID 설계 원칙을 준수하여 개발되었으며,
-                            단위 테스트와 통합 테스트를 통해 코드 품질을 보장합니다.
+                            
                         </p>
                     </div>
                 </div>

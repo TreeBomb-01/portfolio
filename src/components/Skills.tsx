@@ -1,48 +1,40 @@
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Backend Languages",
-      skills: [
-        { name: "Java", level: 85 },
-        { name: "Python", level: 80 },
-        { name: "Node.js", level: 90 },
-        { name: "JavaScript", level: 85 },
-        { name: "TypeScript", level: 75 },
-        { name: "C#", level: 70 },
-      ]
+      title: "🛠 백엔드 개발",
+      description: "안정적이고 확장 가능한 서버 시스템 구축",
+      icon: "🛠",
+      skills: ["Spring Boot", "FastAPI", "RESTful API"]
     },
     {
-      title: "Database & Infrastructure",
-      skills: [
-        { name: "MySQL", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 75 },
-        { name: "Redis", level: 70 },
-        { name: "Docker", level: 80 },
-        { name: "AWS", level: 75 },
-      ]
+      title: "🗄 데이터베이스 & 캐싱",
+      description: "효율적인 데이터 저장 및 관리 시스템 설계",
+      icon: "🗄",
+      skills: ["MySQL", "PostgreSQL", "Redis", "Database Design"]
     },
     {
-      title: "Frameworks & Tools",
-      skills: [
-        { name: "Spring Boot", level: 80 },
-        { name: "Express.js", level: 85 },
-        { name: "Django", level: 75 },
-        { name: "Git", level: 90 },
-        { name: "Postman", level: 85 },
-        { name: "VS Code", level: 90 },
-      ]
+      title: "☁️ 클라우드 & 인프라",
+      description: "확장 가능한 클라우드 인프라 구축 및 관리",
+      icon: "☁️",
+      skills: ["Docker", "Linux", "Nginx"]
     },
     {
-      title: "DevOps & Others",
-      skills: [
-        { name: "Linux", level: 75 },
-        { name: "CI/CD", level: 70 },
-        { name: "Nginx", level: 65 },
-        { name: "Kubernetes", level: 60 },
-        { name: "GraphQL", level: 70 },
-        { name: "REST API", level: 90 },
-      ]
+      title: "🔄 DevOps & 자동화",
+      description: "CI/CD 파이프라인과 배포 자동화 구현",
+      icon: "🔄",
+      skills: ["Jenkins", "Git", "GitHub Actions", "Docker Compose", "Shell Script"]
+    },
+    {
+      title: "💻 프로그래밍 언어",
+      description: "다양한 언어로 효율적인 백엔드 로직 구현",
+      icon: "💻",
+      skills: ["Java", "Python", "SQL"]
+    },
+    {
+      title: "🤖 AI & 데이터 처리",
+      description: "머신러닝 모델 서빙 및 대용량 데이터 처리",
+      icon: "🤖",
+      skills: ["PyTorch", "OpenCV", "Data Pipeline", "Model Serving"]
     }
   ]
 
@@ -55,55 +47,59 @@ export default function Skills() {
               기술 스택
             </h2>
             <p className="text-xl text-gray-600">
-              백엔드 개발에 활용하는 기술들입니다
+              백엔드 개발에 활용하는 기술 분야별 역량입니다
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skillCategories.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="bg-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">
-                  {category.title}
-                </h3>
+              <div key={categoryIndex} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-3">
+                    {category.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">
+                    {category.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {category.description}
+                  </p>
+                </div>
                 
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-gray-700 font-medium">
-                          {skill.name}
-                        </span>
-                        <span className="text-gray-700 font-semibold">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
-                          className="bg-gradient-to-r from-gray-600 to-slate-800 h-2 rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
+                    <span key={skillIndex} className="px-3 py-2 bg-gray-100 text-gray-700 text-sm rounded-full font-medium hover:bg-gray-200 transition-colors">
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Tech Stack Icons */}
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">
-              핵심 기술
-            </h3>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8 max-w-4xl mx-auto">
-              {['Spring Boot', 'Docker', 'MySQL', 'Linux', 'Jenkins', 'AWS'].map((tech) => (
-                <div key={tech} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center group">
-                  <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-gray-600 to-slate-800 rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">
-                    {tech.slice(0, 2)}
-                  </div>
-                  <div className="text-sm font-medium text-gray-700">{tech}</div>
-                </div>
-              ))}
+          {/* 추가 정보 섹션 */}
+          <div className="mt-16 text-center">
+            <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                🎯 개발 철학
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                <strong>안정성</strong>과 <strong>확장성</strong>을 중시하며, 
+                <strong>클린 아키텍처</strong>를 적용해 
+                변화에 유연하고 유지보수가 쉬운 백엔드 시스템을 구축합니다.
+
+              </p>
+              <div className="flex justify-center mt-6 space-x-4">
+                <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                  Clean Architecture
+                </span>
+                <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+                  Microservices
+                </span>
+                <span className="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
+                  API Design
+                </span>
+              </div>
             </div>
           </div>
         </div>
