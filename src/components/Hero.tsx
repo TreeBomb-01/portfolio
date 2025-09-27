@@ -12,7 +12,7 @@ export default function Hero() {
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-            안녕하세요! 👋<br />
+            안녕하세요!👋<br />
             <span className="text-gray-700">백엔드 개발자</span><br />
             입니다
           </h1>

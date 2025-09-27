@@ -96,7 +96,7 @@ export default function Skills() {
               핵심 기술
             </h3>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-8 max-w-4xl mx-auto">
-              {['Java', 'Node.js', 'Python', 'MySQL', 'Docker', 'AWS'].map((tech) => (
+              {['Spring Boot', 'Docker', 'MySQL', 'Linux', 'Jenkins', 'AWS'].map((tech) => (
                 <div key={tech} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center group">
                   <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-gray-600 to-slate-800 rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">
                     {tech.slice(0, 2)}
