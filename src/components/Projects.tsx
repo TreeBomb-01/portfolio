@@ -12,7 +12,8 @@ export default function Projects() {
             title: "CCTV 영상 데이터를 이용한 도로 노후화 탐지 시스템",
             description: "전국 CCTV를 통해 도로 상태를 파악하고 데이터 기반 유지보수 체계를 구축",
             category: "공모전",
-            period: "2025.07 - 현재 (진행중)",
+            period: "2025.07 - 2025.10",
+            award: "은상",
             image: "from-blue-500 to-blue-700",
             contributions: [
                 {
@@ -47,7 +48,7 @@ export default function Projects() {
                 }
             ],
             technologies: ["Spring Boot", "FastAPI", "MySQL", "Redis", "Jenkins", "YOLO", "OpenCV", "PyTorch"],
-            demoUrl: "https://www.helios-cctv.org/",
+            demoUrl: "#",
             githubUrl: "https://github.com/Helios-CCTV/",
             featured: true
         },
@@ -201,9 +202,17 @@ export default function Projects() {
 
                                     <div className="p-6">
                                         <div className="flex items-start justify-between mb-3">
-                                            <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full font-medium">
-                                                {project.category}
-                                            </span>
+                                            <div className="flex gap-2">
+                                                <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full font-medium">
+                                                    {project.category}
+                                                </span>
+                                                {project.award && (
+                                                    <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full font-medium flex items-center gap-1">
+                                                        <span>🏆</span>
+                                                        {project.award}
+                                                    </span>
+                                                )}
+                                            </div>
                                         </div>
                                         <h4 className="text-xl font-bold text-gray-800 group-hover:text-gray-900 transition-colors mb-3">
                                             {project.title}
