@@ -1,6 +1,11 @@
 node_modules
 .git
-.github
+.gitignore
+Dockerfile
+docker-compose.yml
+*.tar
+*.log
+npm-debug.log*
 .jenkins
-.env
+artifacts
 .next
