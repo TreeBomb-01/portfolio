@@ -1,13 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-
-const inter = Inter({ subsets: ['latin'] })
+import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: '백엔드 개발자 포트폴리오',
+  title: '백엔드 개발자 포트폴리오 - HurTaeBum',
   description: '안정적이고 확장 가능한 서버 시스템을 구축하는 백엔드 개발자 포트폴리오',
   icons: {
     icon: '/favicon.ico',
@@ -21,14 +17,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-        <head>
-          <title>Portfolio</title>
-
-        </head>
-      <body className={inter.className}>
-        <Header />
+      <head>
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        />
+      </head>
+      <body className="h-screen flex flex-col text-sm md:text-base overflow-hidden">
         {children}
-        <Footer />
+        <Script 
+          src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )

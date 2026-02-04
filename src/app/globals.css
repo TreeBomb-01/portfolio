@@ -1,28 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --vscode-bg: #1e1e1e;
+  --vscode-sidebar: #252526;
+  --vscode-header: #333333;
+  --vscode-border: #333333;
+  --vscode-text: #d4d4d4;
+  --vscode-text-muted: #969696;
+  --vscode-accent: #569cd6;
+  --vscode-accent-green: #4ec9b0;
+  --vscode-accent-yellow: #dcdcaa;
+  --vscode-accent-orange: #ce9178;
+  --vscode-accent-purple: #cc7832;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Fira Code', monospace;
+  background-color: var(--vscode-bg);
+  color: var(--vscode-text);
+  overflow-x: hidden;
+}
+
+/* Scrollbar - VS Code Style */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vscode-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4f4f4f;
 }
 
 /* 부드러운 스크롤 */
 html {
   scroll-behavior: smooth;
+}
+
+/* Syntax Highlighting Classes */
+.c-keyword { color: #569cd6; }
+.c-type { color: #4ec9b0; }
+.c-string { color: #ce9178; }
+.c-comment { color: #6a9955; }
+.c-func { color: #dcdcaa; }
+.c-var { color: #9cdcfe; }
+.c-num { color: #b5cea8; }
+.c-prop { color: #9cdcfe; }
+.c-annotation { color: #cc7832; }
+
+/* Cursor Blink Animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 1.2em;
+  background-color: #d4d4d4;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+/* Tab Styles */
+.tab-active {
+  background-color: var(--vscode-bg);
+  border-top: 2px solid var(--vscode-accent);
+  color: white;
+}
+
+.tab-inactive {
+  background-color: #2d2d2d;
+  color: #969696;
+}
+
+/* Sidebar Styles */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  color: #cccccc;
+  transition: background-color 0.15s;
+}
+
+.sidebar-item:hover {
+  background-color: #2a2d2e;
+}
+
+.sidebar-active {
+  background-color: #37373d !important;
+  color: white;
+}
+
+/* Preview Card Styles */
+.preview-card {
+  background: var(--vscode-sidebar);
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--vscode-border);
+  margin-bottom: 1rem;
+}
+
+.preview-tag {
+  display: inline-block;
+  background: #2d2d2d;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-right: 4px;
+  color: #9cdcfe;
+  border: 1px solid #444;
+}
+
+/* Section Styles */
+.readme-section {
+  margin-bottom: 3rem;
+  border-bottom: 1px dashed var(--vscode-border);
+  padding-bottom: 2rem;
+}
+
+.readme-section:last-child {
+  border-bottom: none;
 }
 
 /* 텍스트 줄 제한 유틸리티 */
@@ -60,4 +173,57 @@ html {
 
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* VS Code Preview Content Styles */
+.preview-content h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--vscode-accent);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--vscode-border);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.preview-content h1:first-child {
+  margin-top: 0;
+}
+
+.preview-content h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--vscode-accent-yellow);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.preview-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--vscode-accent-green);
+  margin-bottom: 0.5rem;
+}
+
+.preview-content p {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  color: var(--vscode-text);
+}
+
+.preview-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.preview-content li {
+  margin-bottom: 0.3rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .mobile-hide {
+    display: none;
+  }
 }

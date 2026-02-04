@@ -1,68 +1,49 @@
 'use client'
 
-import { useState } from 'react'
+interface HeaderProps {
+  viewMode: 'preview' | 'code'
+  onModeChange: (mode: 'preview' | 'code') => void
+}
 
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const navigation = [
-    { name: '홈', href: '#home' },
-    { name: '소개', href: '#about' },
-    { name: '스킬', href: '#skills' },
-    { name: '프로젝트', href: '#projects' }//,
-    //{ name: '연락처', href: '#contact' },
-  ]
-
+export default function Header({ viewMode, onModeChange }: HeaderProps) {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-sm z-50">
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold text-gray-700">
-            HurTaeBum&apos;s Portfolio
-          </div>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
+    <header className="h-10 bg-[#333333] flex items-center justify-between px-4 select-none border-b border-[#1e1e1e] flex-shrink-0">
+      <div className="flex items-center gap-2">
+        {/* Traffic Light Buttons */}
+        <span className="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
+        <span className="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
+        <span className="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+        <span className="ml-4 text-gray-400 text-xs hidden md:inline">
+          portfolio — backend-engineer
+        </span>
+      </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <span className={`bg-gray-800 block h-0.5 w-6 rounded-sm transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}></span>
-              <span className={`bg-gray-800 block h-0.5 w-6 rounded-sm transition-all duration-300 my-1 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`bg-gray-800 block h-0.5 w-6 rounded-sm transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
-            </div>
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block py-2 text-gray-700 hover:text-gray-900 transition-colors font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        )}
-      </nav>
+      {/* View Toggle */}
+      <div className="flex items-center gap-3">
+        <span className="text-xs text-gray-400 mr-1 hidden sm:inline">Mode:</span>
+        <button
+          onClick={() => onModeChange('preview')}
+          className={`px-3 py-1 text-xs rounded font-bold transition-all flex items-center gap-1 ${
+            viewMode === 'preview'
+              ? 'bg-[#569cd6] text-white'
+              : 'bg-[#2d2d2d] text-gray-400 hover:text-white'
+          }`}
+        >
+          <i className="fas fa-eye"></i>
+          <span className="hidden sm:inline">Preview</span>
+        </button>
+        <button
+          onClick={() => onModeChange('code')}
+          className={`px-3 py-1 text-xs rounded font-bold transition-all flex items-center gap-1 ${
+            viewMode === 'code'
+              ? 'bg-[#569cd6] text-white'
+              : 'bg-[#2d2d2d] text-gray-400 hover:text-white'
+          }`}
+        >
+          <i className="fas fa-code"></i>
+          <span className="hidden sm:inline">Source</span>
+        </button>
+      </div>
     </header>
   )
 }
