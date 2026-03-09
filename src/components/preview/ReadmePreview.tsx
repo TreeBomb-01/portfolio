@@ -1,4 +1,4 @@
-import { projectsData, quickAccessItems, awardsData } from '@/data/portfolioData'
+import { projectsData, quickAccessItems, awardsData, philosophyData, skillCategories, contactInfo } from '@/data/portfolioData'
 
 interface ReadmePreviewProps {
   onSectionChange?: (section: string) => void
@@ -45,15 +45,13 @@ export default function ReadmePreview({ onSectionChange }: ReadmePreviewProps) {
         <p className="text-lg text-gray-300">
           안녕하세요, <strong className="text-[#569cd6]">&quot;안정성과 확장성&quot;</strong>을 최우선으로 생각하는 백엔드 개발자 <strong>허태범</strong>입니다.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <div className="preview-card">
-            <h3 className="text-[#dcdcaa] font-bold mb-2">💡 Philosophy</h3>
-            <p className="text-sm text-gray-400">안정적이고 확장 가능한 서버 아키텍처 구축에 집중합니다. <br /> 프로젝트와 공모전을 통해 운영 효율성과 신뢰성을 높이는 시스템 설계를 경험했습니다.</p>
-          </div>
-          <div className="preview-card">
-            <h3 className="text-[#4ec9b0] font-bold mb-2">🎯 Goal</h3>
-            <p className="text-sm text-gray-400">효율적인 설계와 운영 개선을 통해 처리 속도를 단축하고 안정성을 강화했던 경험을 살려, 신뢰할 수 있는 백엔드 시스템을 구축하는 데 기여하고자 합니다.</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+          {philosophyData.map((philosophy, index) => (
+            <div key={index} className="preview-card">
+              <h3 className="text-[#dcdcaa] font-bold mb-2">💡 {philosophy.title}</h3>
+              <p className="text-sm text-gray-400">{philosophy.description}</p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -61,33 +59,23 @@ export default function ReadmePreview({ onSectionChange }: ReadmePreviewProps) {
       <div className="readme-section">
         <h1>🛠️ Skills</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="preview-card">
-            <h3 className="text-[#569cd6] font-bold mb-3 border-b border-[#444] pb-2">Backend & Language</h3>
-            <div className="flex flex-wrap gap-2">
-              <span className="preview-tag">Java</span>
-              <span className="preview-tag">Spring Boot</span>
-              <span className="preview-tag">Python</span>
-              <span className="preview-tag">FastAPI</span>
-              <span className="preview-tag">JPA</span>
+          {skillCategories.map((category, index) => (
+            <div key={index} className="preview-card">
+              <h3 className="text-[#569cd6] font-bold mb-3 border-b border-[#444] pb-2">{category.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map(skill => (
+                  <span key={skill} className="preview-tag">{skill}</span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="preview-card">
-            <h3 className="text-[#4ec9b0] font-bold mb-3 border-b border-[#444] pb-2">Infrastructure</h3>
-            <div className="flex flex-wrap gap-2">
-              <span className="preview-tag">Docker</span>
-              <span className="preview-tag">Jenkins</span>
-              <span className="preview-tag">MySQL</span>
-              <span className="preview-tag">PostgreSQL</span>
-              <span className="preview-tag">Redis</span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
       {/* Main Projects Section */}
       <div className="readme-section">
         <h1>🚀 Main Projects</h1>
-        {projectsData.slice(0, 3).map((project, index) => (
+        {projectsData.slice(0, 2).map((project, index) => (
           <div key={project.id} className="mb-8">
             <h2 style={{ marginTop: index === 0 ? 0 : undefined }}>{index + 1}. {project.title}</h2>
             <div className="mb-4 flex flex-wrap gap-1">
@@ -117,7 +105,7 @@ export default function ReadmePreview({ onSectionChange }: ReadmePreviewProps) {
       <div className="readme-section">
         <h1>🧩 Sub Projects</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {projectsData.slice(3).map(project => (
+          {projectsData.slice(2).map(project => (
             <div key={project.id} className="preview-card">
               <h3>{project.title}</h3>
               <p className="text-sm text-gray-400 mb-2">{project.period}</p>
@@ -147,6 +135,29 @@ export default function ReadmePreview({ onSectionChange }: ReadmePreviewProps) {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Contact Section */}
+      <div className="readme-section">
+        <h1>📞 Contact</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <a href={`tel:${contactInfo.phone}`} className="preview-card flex items-center gap-3 hover:border-[#569cd6] transition-colors overflow-hidden">
+            <i className="fas fa-phone text-[#4ec9b0] flex-shrink-0"></i>
+            <span className="text-sm text-gray-300 truncate">{contactInfo.phone}</span>
+          </a>
+          <a href={`mailto:${contactInfo.email}`} className="preview-card flex items-center gap-3 hover:border-[#569cd6] transition-colors overflow-hidden">
+            <i className="fas fa-envelope text-[#dcdcaa] flex-shrink-0"></i>
+            <span className="text-sm text-gray-300 truncate">{contactInfo.email}</span>
+          </a>
+          <a href={`https://${contactInfo.github}`} target="_blank" rel="noopener noreferrer" className="preview-card flex items-center gap-3 hover:border-[#569cd6] transition-colors overflow-hidden">
+            <i className="fab fa-github text-white flex-shrink-0"></i>
+            <span className="text-sm text-gray-300 truncate">GitHub</span>
+          </a>
+          <a href={`https://${contactInfo.portfolio}`} target="_blank" rel="noopener noreferrer" className="preview-card flex items-center gap-3 hover:border-[#569cd6] transition-colors overflow-hidden">
+            <i className="fas fa-globe text-[#569cd6] flex-shrink-0"></i>
+            <span className="text-sm text-gray-300 truncate">Portfolio</span>
+          </a>
         </div>
       </div>
     </div>
