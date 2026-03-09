@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Header from '@/components/Header'
 import Sidebar from '@/components/Sidebar'
@@ -9,7 +9,8 @@ import ContentViewer from '@/components/ContentViewer'
 import Terminal from '@/components/Terminal'
 import PdfNotification from '@/components/PdfNotification'
 
-export default function Home() {
+// useSearchParams를 사용하는 내부 컴포넌트
+function HomeContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   
@@ -90,5 +91,26 @@ export default function Home() {
       {/* Terminal */}
       <Terminal />
     </>
+  )
+}
+
+// 로딩 fallback 컴포넌트
+function LoadingFallback() {
+  return (
+    <div className="flex-1 flex items-center justify-center bg-[#1e1e1e]">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#007acc] mx-auto mb-4"></div>
+        <p className="text-gray-400 text-sm">Loading...</p>
+      </div>
+    </div>
+  )
+}
+
+// 메인 페이지 컴포넌트 - Suspense로 감싸기
+export default function Home() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <HomeContent />
+    </Suspense>
   )
 }

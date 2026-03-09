@@ -8,9 +8,6 @@ const nextConfig = {
     unoptimized: true, // 정적 배포용
   },
   
-  // 불필요한 기능 비활성화
-  swcMinify: true,
-  
   // 프로덕션 최적화
   poweredByHeader: false,
   compress: true,
