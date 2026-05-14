@@ -46,7 +46,7 @@ export default function HeroSection() {
             {/* 부제 */}
             <p
               className="text-base mb-6 italic"
-              style={{ color: 'var(--text-secondary)', fontFamily: 'Georgia, serif' }}
+              style={{ color: 'var(--text-secondary)' }}
             >
               코드에 근거를 두는 개발자
             </p>

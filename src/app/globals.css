@@ -5,13 +5,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── HG꼬딕씨 Pro — 서버 볼륨 마운트 (/home/treebomb/portfolio/fonts → /app/public/fonts) ── */
-@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_00G.OTF') format('opentype'); font-weight: 100; font-display: swap; }
-@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_20G.OTF') format('opentype'); font-weight: 200; font-display: swap; }
-@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_40G.OTF') format('opentype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_60G.OTF') format('opentype'); font-weight: 600; font-display: swap; }
-@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_80G.OTF') format('opentype'); font-weight: 700; font-display: swap; }
-@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_99G.OTF') format('opentype'); font-weight: 900; font-display: swap; }
+/* ── HG꼬딕씨 Pro — local() 우선(로컬 테스트), url() 차선(서버 배포) ── */
+@font-face { font-family: 'HG꼬딕Pro'; src: local('HG꼬딕씨_Pro 00g'), url('/fonts/HGGGOTHICSSI_PRO_00G.OTF') format('opentype'); font-weight: 100; font-display: swap; }
+@font-face { font-family: 'HG꼬딕Pro'; src: local('HG꼬딕씨_Pro 20g'), url('/fonts/HGGGOTHICSSI_PRO_20G.OTF') format('opentype'); font-weight: 200; font-display: swap; }
+@font-face { font-family: 'HG꼬딕Pro'; src: local('HG꼬딕씨_Pro 40g'), url('/fonts/HGGGOTHICSSI_PRO_40G.OTF') format('opentype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'HG꼬딕Pro'; src: local('HG꼬딕씨_Pro 60g'), url('/fonts/HGGGOTHICSSI_PRO_60G.OTF') format('opentype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'HG꼬딕Pro'; src: local('HG꼬딕씨_Pro 80g'), url('/fonts/HGGGOTHICSSI_PRO_80G.OTF') format('opentype'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'HG꼬딕Pro'; src: local('HG꼬딕씨_Pro 99g'), url('/fonts/HGGGOTHICSSI_PRO_99G.OTF') format('opentype'); font-weight: 900; font-display: swap; }
+
+/* font-mono 한글 fallback: JetBrains Mono에 없는 글자는 HG꼬딕Pro로 */
+.font-mono {
+  font-family: 'JetBrains Mono', 'HG꼬딕Pro', monospace;
+}
 
 :root {
   --bg-main: #F5F0E8;

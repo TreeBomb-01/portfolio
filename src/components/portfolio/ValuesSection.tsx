@@ -11,7 +11,7 @@ export default function ValuesSection() {
           >
             Values
           </h2>
-          <p className="mt-4 text-sm font-mono" style={{ color: 'var(--text-muted)' }}>
+          <p className="mt-4 text-sm" style={{ color: 'var(--text-muted)' }}>
             개발 철학
           </p>
         </div>

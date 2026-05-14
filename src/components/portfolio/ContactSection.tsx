@@ -45,7 +45,7 @@ export default function ContactSection() {
           >
             Contact
           </h2>
-          <p className="mt-4 text-sm font-mono" style={{ color: 'var(--text-muted)' }}>
+          <p className="mt-4 text-sm" style={{ color: 'var(--text-muted)' }}>
             연락처
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function ContactSection() {
                 </span>
                 <div>
                   <p
-                    className="text-xs font-mono uppercase tracking-widest mb-0.5"
+                    className="text-xs uppercase tracking-widest mb-0.5"
                     style={{ color: 'var(--text-muted)' }}
                   >
                     {item.label}
@@ -115,10 +115,10 @@ export default function ContactSection() {
         className="max-w-5xl mx-auto px-6 mt-20 pt-8 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2"
         style={{ borderColor: 'var(--border)' }}
       >
-        <p className="font-mono text-xs" style={{ color: 'var(--text-muted)' }}>
+        <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
           © 2025 허태범
         </p>
-        <p className="font-mono text-xs" style={{ color: 'var(--text-muted)' }}>
+        <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
           Built with Next.js + Tailwind CSS
         </p>
       </div>

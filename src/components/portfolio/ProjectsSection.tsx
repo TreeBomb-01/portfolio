@@ -17,12 +17,12 @@ function HighlightCard({ card }: { card: TroubleCard }) {
       {/* 헤더 */}
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left flex items-start gap-3 px-4 py-3.5 transition-colors"
+        className="w-full text-left flex items-center gap-3 px-4 py-3.5 transition-colors"
         style={{ backgroundColor: open ? '#F5F0E8' : 'var(--bg-main)' }}
       >
         {/* 아이콘 박스 26×26 */}
         <div
-          className="flex-shrink-0 flex items-center justify-center rounded-md mt-0.5"
+          className="flex-shrink-0 flex items-center justify-center rounded-md"
           style={{ width: 26, height: 26, backgroundColor: '#E1F5EE', color: '#1D9E75' }}
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 13, height: 13 }}>
@@ -130,7 +130,7 @@ function ProjectItem({ project }: { project: Project }) {
           </p>
 
           {/* 기간 */}
-          <p className="font-mono mb-4" style={{ fontSize: 12, color: 'var(--text-muted)' }}>
+          <p className="mb-4" style={{ fontSize: 12, color: 'var(--text-muted)' }}>
             {project.period}
           </p>
 

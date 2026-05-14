@@ -15,13 +15,14 @@ export default function AwardsSection() {
           >
             Awards & Education
           </h2>
-          <p className="mt-4 text-sm font-mono" style={{ color: 'var(--text-muted)' }}>
+          <p className="mt-4 text-sm" style={{ color: 'var(--text-muted)' }}>
             수상 및 교육
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Awards */}
+
+          {/* 좌측: 수상 경력 */}
           <div>
             <h3
               className="text-xs font-semibold uppercase tracking-widest font-mono mb-5"
@@ -57,7 +58,7 @@ export default function AwardsSection() {
             </div>
           </div>
 
-          {/* Education + Certifications + Activities */}
+          {/* 우측: 학력 + 자격증 + 기타 활동 + 직무 교육 */}
           <div className="space-y-8">
             {/* Education */}
             <div>
@@ -67,36 +68,31 @@ export default function AwardsSection() {
               >
                 학력
               </h3>
-              {education.map((edu, i) => (
-                <div
-                  key={i}
-                  className="portfolio-card p-5"
-                  style={{ backgroundColor: 'var(--bg-main)' }}
-                >
-                  <p
-                    className="font-semibold text-sm"
-                    style={{ color: 'var(--text-primary)' }}
+              <div className="space-y-3">
+                {education.map((edu, i) => (
+                  <div
+                    key={i}
+                    className="portfolio-card p-5"
+                    style={{ backgroundColor: 'var(--bg-main)' }}
                   >
-                    {edu.institution}
-                  </p>
-                  <p className="text-sm mt-0.5" style={{ color: 'var(--text-secondary)' }}>
-                    {edu.detail}
-                  </p>
-                  <div className="flex items-center gap-3 mt-2">
-                    <span
-                      className="font-mono text-xs"
-                      style={{ color: 'var(--text-muted)' }}
-                    >
-                      {edu.period}
-                    </span>
-                    {edu.gpa && (
-                      <span className="tech-tag">GPA {edu.gpa}</span>
-                    )}
+                    <p className="font-semibold text-sm" style={{ color: 'var(--text-primary)' }}>
+                      {edu.institution}
+                    </p>
+                    <p className="text-sm mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+                      {edu.detail}
+                    </p>
+                    <div className="flex items-center gap-3 mt-2">
+                      <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                        {edu.period}
+                      </span>
+                      {edu.gpa && (
+                        <span className="tech-tag">GPA {edu.gpa}</span>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-
             {/* Certifications */}
             <div>
               <h3
@@ -110,10 +106,7 @@ export default function AwardsSection() {
                   <span
                     key={i}
                     className="portfolio-card px-4 py-2 text-sm font-medium"
-                    style={{
-                      backgroundColor: 'var(--bg-main)',
-                      color: 'var(--text-primary)',
-                    }}
+                    style={{ backgroundColor: 'var(--bg-main)', color: 'var(--text-primary)' }}
                   >
                     {cert}
                   </span>
@@ -131,11 +124,7 @@ export default function AwardsSection() {
               </h3>
               <div className="space-y-2">
                 {activities.map((act, i) => (
-                  <p
-                    key={i}
-                    className="text-sm"
-                    style={{ color: 'var(--text-secondary)' }}
-                  >
+                  <p key={i} className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                     — {act}
                   </p>
                 ))}
@@ -152,11 +141,7 @@ export default function AwardsSection() {
               </h3>
               <div className="space-y-2">
                 {courses.map((course, i) => (
-                  <p
-                    key={i}
-                    className="text-sm"
-                    style={{ color: 'var(--text-secondary)' }}
-                  >
+                  <p key={i} className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                     — {course}
                   </p>
                 ))}

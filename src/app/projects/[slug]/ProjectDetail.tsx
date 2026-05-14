@@ -131,7 +131,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
   return (
     <div
       className="min-h-screen"
-      style={{ backgroundColor: 'var(--bg-main)', fontFamily: "'Noto Sans KR', sans-serif" }}
+      style={{ backgroundColor: 'var(--bg-main)' }}
     >
       {/* ── 상단 헤더 영역 ── */}
       <div
