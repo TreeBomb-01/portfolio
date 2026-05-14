@@ -1,229 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap');
+/* @import는 반드시 맨 위에 */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ── HG꼬딕씨 Pro — 서버 볼륨 마운트 (/home/treebomb/portfolio/fonts → /app/public/fonts) ── */
+@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_00G.OTF') format('opentype'); font-weight: 100; font-display: swap; }
+@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_20G.OTF') format('opentype'); font-weight: 200; font-display: swap; }
+@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_40G.OTF') format('opentype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_60G.OTF') format('opentype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_80G.OTF') format('opentype'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'HG꼬딕Pro'; src: url('/fonts/HGGGOTHICSSI_PRO_99G.OTF') format('opentype'); font-weight: 900; font-display: swap; }
+
 :root {
-  --vscode-bg: #1e1e1e;
-  --vscode-sidebar: #252526;
-  --vscode-header: #333333;
-  --vscode-border: #333333;
-  --vscode-text: #d4d4d4;
-  --vscode-text-muted: #969696;
-  --vscode-accent: #569cd6;
-  --vscode-accent-green: #4ec9b0;
-  --vscode-accent-yellow: #dcdcaa;
-  --vscode-accent-orange: #ce9178;
-  --vscode-accent-purple: #cc7832;
+  --bg-main: #F5F0E8;
+  --bg-card: #FDFAF4;
+  --bg-card-hover: #FAF5EC;
+  --accent-primary: #1D9E75;
+  --accent-secondary: #5DCAA5;
+  --accent-light: #E8F5EF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-muted: #8A8280;
+  --border: #E5DED1;
+  --border-hover: #5DCAA5;
+  --nav-bg: rgba(245, 240, 232, 0.92);
 }
 
-body {
-  font-family: 'Fira Code', monospace;
-  background-color: var(--vscode-bg);
-  color: var(--vscode-text);
-  overflow-x: hidden;
-}
-
-/* Scrollbar - VS Code Style */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--vscode-bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #424242;
-  border-radius: 0;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #4f4f4f;
-}
-
-/* 부드러운 스크롤 */
 html {
   scroll-behavior: smooth;
 }
 
-/* Syntax Highlighting Classes */
-.c-keyword { color: #569cd6; }
-.c-type { color: #4ec9b0; }
-.c-string { color: #ce9178; }
-.c-comment { color: #6a9955; }
-.c-func { color: #dcdcaa; }
-.c-var { color: #9cdcfe; }
-.c-num { color: #b5cea8; }
-.c-prop { color: #9cdcfe; }
-.c-annotation { color: #cc7832; }
-
-/* Cursor Blink Animation */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
 }
 
-.cursor-blink {
-  display: inline-block;
-  width: 8px;
-  height: 1.2em;
-  background-color: #d4d4d4;
-  animation: blink 1s step-end infinite;
-  vertical-align: middle;
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb {
+  background: var(--accent-secondary);
+  border-radius: 3px;
 }
 
-/* Tab Styles */
-.tab-active {
-  background-color: var(--vscode-bg);
-  border-top: 2px solid var(--vscode-accent);
-  color: white;
+/* ── Utility Classes ── */
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
 }
 
-.tab-inactive {
-  background-color: #2d2d2d;
-  color: #969696;
-}
-
-/* Sidebar Styles */
-.sidebar-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-  color: #cccccc;
-  transition: background-color 0.15s;
-}
-
-.sidebar-item:hover {
-  background-color: #2a2d2e;
-}
-
-.sidebar-active {
-  background-color: #37373d !important;
-  color: white;
-}
-
-/* Preview Card Styles */
-.preview-card {
-  background: var(--vscode-sidebar);
-  padding: 1rem;
-  border-radius: 6px;
-  border: 1px solid var(--vscode-border);
-  margin-bottom: 1rem;
-}
-
-.preview-tag {
-  display: inline-block;
-  background: #2d2d2d;
-  padding: 2px 8px;
+/* Tech tag */
+.tech-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 10px;
   border-radius: 4px;
-  font-size: 0.85rem;
-  margin-right: 4px;
-  color: #9cdcfe;
-  border: 1px solid #444;
+  background: var(--accent-light);
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-secondary);
+  display: inline-block;
+  white-space: nowrap;
 }
 
-/* Section Styles */
-.readme-section {
-  margin-bottom: 3rem;
-  border-bottom: 1px dashed var(--vscode-border);
-  padding-bottom: 2rem;
+/* Portfolio card */
+.portfolio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.readme-section:last-child {
-  border-bottom: none;
+.portfolio-card:hover {
+  box-shadow: 0 4px 24px rgba(29, 158, 117, 0.09);
+  border-color: var(--border-hover);
 }
 
-/* 텍스트 줄 제한 유틸리티 */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  .line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-  
-  .line-clamp-3 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-  }
+/* Section heading underline accent */
+.section-heading {
+  position: relative;
+  display: inline-block;
 }
 
-/* 커스텀 애니메이션 */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--accent-primary);
+  border-radius: 2px;
+  margin-top: 6px;
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-/* VS Code Preview Content Styles */
-.preview-content h1 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--vscode-accent);
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--vscode-border);
-  padding-bottom: 0.5rem;
-  margin-top: 2rem;
-}
-
-.preview-content h1:first-child {
-  margin-top: 0;
-}
-
-.preview-content h2 {
-  font-size: 1.4rem;
+/* Metric highlight badge */
+.metric-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: var(--vscode-accent-yellow);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: var(--accent-light);
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.preview-content h3 {
+/* Step label (문제인식 / 해결방안 / 결과) */
+.step-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+/* Award rank badge */
+.award-rank {
   font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--vscode-accent-green);
-  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
-.preview-content p {
-  margin-bottom: 0.8rem;
-  line-height: 1.6;
-  color: var(--vscode-text);
+/* Mobile nav overlay */
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 40;
 }
 
-.preview-content ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
+/* Animate accordion */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.preview-content li {
-  margin-bottom: 0.3rem;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .mobile-hide {
-    display: none;
-  }
+.accordion-open {
+  animation: slideDown 0.2s ease;
 }
