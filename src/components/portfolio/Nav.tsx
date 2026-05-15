@@ -38,10 +38,12 @@ export default function Nav() {
         <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
           <button
             onClick={() => handleNav('#hero')}
-            className="font-mono text-sm font-semibold tracking-tight"
-            style={{ color: 'var(--accent-primary)' }}
+            className="text-sm font-semibold tracking-tight flex items-center gap-2"
+            style={{ color: 'var(--text-primary)' }}
           >
             허태범
+            <span style={{ color: 'var(--border)', fontWeight: 300 }}>|</span>
+            <span style={{ color: 'var(--accent-primary)' }}>Backend Developer</span>
           </button>
 
           {/* Desktop nav */}

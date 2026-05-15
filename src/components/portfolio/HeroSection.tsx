@@ -25,7 +25,7 @@ export default function HeroSection() {
           <div>
             {/* eyebrow */}
             <p
-              className="font-mono text-xs tracking-widest uppercase mb-5 flex items-center gap-2"
+              className="text-xs tracking-widest uppercase mb-5 flex items-center gap-2"
               style={{ color: 'var(--accent-primary)' }}
             >
               <span
@@ -122,7 +122,7 @@ export default function HeroSection() {
 
               {/* 카드 헤더 */}
               <div
-                className="px-6 pt-5 pb-4 flex items-center gap-2 font-mono text-xs"
+                className="px-6 pt-5 pb-4 flex items-center gap-2 text-xs"
                 style={{ color: 'var(--text-muted)' }}
               >
                 <span
@@ -144,7 +144,7 @@ export default function HeroSection() {
                     }}
                   >
                     <p
-                      className="font-mono text-xs uppercase tracking-widest mb-1.5"
+                      className="text-xs uppercase tracking-widest mb-1.5"
                       style={{ color: 'var(--accent-primary)' }}
                     >
                       {skill.label}

@@ -38,7 +38,7 @@ function HighlightCard({ card }: { card: TroubleCard }) {
         {/* 카테고리 칩 + chevron */}
         <div className="flex items-center gap-2 flex-shrink-0 ml-1">
           <span
-            className="hidden sm:inline font-mono text-xs px-2 py-0.5 rounded"
+            className="hidden sm:inline text-xs px-2 py-0.5 rounded"
             style={{ backgroundColor: cat.bg, color: cat.text }}
           >
             {cat.label}
@@ -67,12 +67,12 @@ function HighlightCard({ card }: { card: TroubleCard }) {
                 { label: '문제 인식', text: card.problem,   color: '#993C1D', border: 'var(--border)',  special: false },
                 { label: '해결 방안', text: card.solution,  color: '#185FA5', border: 'var(--border)',  special: false },
                 { label: '결과',     text: card.result,    color: '#0F6E56', border: '#5DCAA5',        special: false },
-                { label: '배운 점',  text: card.learned,   color: '#533AB7', border: 'var(--border)',  special: true  },
+                { label: '회고',     text: card.learned,   color: '#533AB7', border: 'var(--border)',  special: true  },
               ] as { label: string; text: string; color: string; border: string; special: boolean }[]
             ).map(({ label, text, color, border, special }) => (
               <div key={label} className="grid gap-2.5" style={{ gridTemplateColumns: '56px 1fr' }}>
                 <span
-                  className="font-mono text-xs uppercase tracking-wider text-right pt-0.5"
+                  className="text-xs uppercase tracking-wider text-right pt-0.5"
                   style={{ color }}
                 >
                   {label}
@@ -115,7 +115,7 @@ function ProjectItem({ project }: { project: Project }) {
           style={{ borderColor: 'var(--border)' }}
         >
           {/* eyebrow */}
-          <p className="font-mono text-xs tracking-widest mb-2.5" style={{ color: '#1D9E75' }}>
+          <p className="text-xs tracking-widest mb-2.5" style={{ color: '#1D9E75' }}>
             {project.number} / {project.type}
           </p>
 
@@ -139,7 +139,7 @@ function ProjectItem({ project }: { project: Project }) {
             {project.techStack.map((tech) => (
               <span
                 key={tech}
-                className="font-mono rounded"
+                className="rounded"
                 style={{
                   fontSize: 11,
                   padding: '2px 8px',
@@ -158,7 +158,7 @@ function ProjectItem({ project }: { project: Project }) {
             {[project.role, project.teamSize].map((tag) => (
               <span
                 key={tag}
-                className="font-mono rounded"
+                className="rounded"
                 style={{
                   fontSize: 11,
                   padding: '2px 8px',
@@ -177,7 +177,7 @@ function ProjectItem({ project }: { project: Project }) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block font-mono rounded transition-colors"
+            className="inline-block rounded transition-colors"
             style={{
               fontSize: 11,
               padding: '4px 12px',
@@ -230,7 +230,7 @@ function ProjectItem({ project }: { project: Project }) {
             className="flex items-center justify-between px-1 pt-3 border-t"
             style={{ borderColor: 'var(--border)' }}
           >
-            <span className="font-mono" style={{ fontSize: 12, color: 'var(--text-muted)' }}>
+            <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>
               <span style={{ color: '#1D9E75', fontWeight: 600 }}>
                 {project.troubleCards.length - project.highlights.length}
               </span>
@@ -239,7 +239,7 @@ function ProjectItem({ project }: { project: Project }) {
 
             <Link
               href={`/projects/${project.slug}`}
-              className="font-mono rounded transition-colors"
+              className="rounded transition-colors"
               style={{
                 fontSize: 12,
                 padding: '4px 12px',
@@ -275,7 +275,7 @@ export default function ProjectsSection() {
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-12">
           <p
-            className="font-mono text-xs tracking-widest uppercase mb-2 flex items-center gap-2"
+            className="text-xs tracking-widest uppercase mb-2 flex items-center gap-2"
             style={{ color: '#1D9E75' }}
           >
             <span style={{ color: '#5DCAA5' }}>//</span> Projects

@@ -25,7 +25,7 @@ export default function AwardsSection() {
           {/* 좌측: 수상 경력 */}
           <div>
             <h3
-              className="text-xs font-semibold uppercase tracking-widest font-mono mb-5"
+              className="text-xs font-semibold uppercase tracking-widest mb-5"
               style={{ color: 'var(--accent-primary)' }}
             >
               수상 경력
@@ -63,7 +63,7 @@ export default function AwardsSection() {
             {/* Education */}
             <div>
               <h3
-                className="text-xs font-semibold uppercase tracking-widest font-mono mb-5"
+                className="text-xs font-semibold uppercase tracking-widest mb-5"
                 style={{ color: 'var(--accent-primary)' }}
               >
                 학력
@@ -96,7 +96,7 @@ export default function AwardsSection() {
             {/* Certifications */}
             <div>
               <h3
-                className="text-xs font-semibold uppercase tracking-widest font-mono mb-5"
+                className="text-xs font-semibold uppercase tracking-widest mb-5"
                 style={{ color: 'var(--accent-primary)' }}
               >
                 자격증
@@ -117,7 +117,7 @@ export default function AwardsSection() {
             {/* Activities */}
             <div>
               <h3
-                className="text-xs font-semibold uppercase tracking-widest font-mono mb-5"
+                className="text-xs font-semibold uppercase tracking-widest mb-5"
                 style={{ color: 'var(--accent-primary)' }}
               >
                 기타 활동
@@ -134,7 +134,7 @@ export default function AwardsSection() {
             {/* Courses */}
             <div>
               <h3
-                className="text-xs font-semibold uppercase tracking-widest font-mono mb-5"
+                className="text-xs font-semibold uppercase tracking-widest mb-5"
                 style={{ color: 'var(--accent-primary)' }}
               >
                 직무 교육

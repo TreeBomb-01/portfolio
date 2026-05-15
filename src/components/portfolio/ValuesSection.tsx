@@ -25,7 +25,7 @@ export default function ValuesSection() {
               {/* Number + keyword row */}
               <div className="flex items-center justify-between">
                 <span
-                  className="font-mono text-4xl font-bold leading-none"
+                  className="text-4xl font-bold leading-none"
                   style={{ color: 'var(--border)' }}
                 >
                   {v.number}
