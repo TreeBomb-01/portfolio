@@ -50,8 +50,8 @@ export const projectsData: Project[] = [
     period: '2025.12 ~ 현재 진행 중',
     status: 'ongoing',
     techStack: ['Java 21', 'Spring Boot 3.4', 'JPA', 'TDD', 'Mockito', 'PostgreSQL', 'MSA', 'Jenkins', 'Groovy', 'QueryDSL'],
-    role: 'BE-DevOps (1인)',
-    teamSize: '총 10인',
+    role: 'BE-DevOps',
+    teamSize: 'DevOps(1), FE(1), FE·BE(1), BE·AI(2), BE·DevOps(1) — 총 6인',
     githubUrl: 'https://github.com/St-rdy',
     description:
       'MSA 환경을 기반으로 실시간 그룹 채팅, 커뮤니티 게시판, 학습 트래킹 기능을 하나로 통합한 공시생 맞춤형 스터디 플랫폼입니다. 각 서비스가 독립적으로 배포되고 확장될 수 있도록 마이크로서비스 아키텍처로 설계했습니다.',
@@ -168,7 +168,7 @@ export const projectsData: Project[] = [
     period: '2025.07 ~ 2025.11',
     status: 'completed',
     techStack: ['Java 17', 'Spring Boot 3.5', 'FastAPI', 'Redis Stream', 'PostgreSQL', 'OpenCV', 'FFmpeg', 'Docker', 'Jenkins'],
-    role: 'BE-DevOps (1인)',
+    role: 'BE-DevOps',
     teamSize: '총 2인',
     githubUrl: 'https://github.com/Helios-CCTV',
     description:
@@ -300,7 +300,7 @@ export const projectsData: Project[] = [
     period: '2025.03 ~ 2025.11',
     status: 'completed',
     techStack: ['Java 21', 'Spring Boot 3', 'FastAPI', 'MediaPipe', 'OpenAI API', 'WebSocket', 'MinIO', 'Docker', 'Jenkins'],
-    role: 'BE-DevOps-팀장 (기여도 100%)',
+    role: 'BE-DevOps-팀장',
     teamSize: '총 2인',
     githubUrl: 'https://github.com/LevelUpFit',
     description:

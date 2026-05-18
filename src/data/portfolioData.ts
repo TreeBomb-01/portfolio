@@ -241,7 +241,7 @@ export const projectsData: Project[] = [
     description: "실시간 채팅과 정보 공유 게시판을 통해 효율적인 학습을 돕는 스터디 커뮤니티 서비스",
     category: "사이드 프로젝트",
     period: "2025.12 - 현재",
-    teamSize: "6인 ",
+    teamSize: "DevOps(1), FE(1), FE·BE(1), BE·AI(2), BE·DevOps(1) — 총 6인",
     role: "Board, Chat Service 개발, CI/CD 파이프라인 구축",
     results: [
       "마이크로서비스(MSA) 아키텍처 기반 시스템 설계",

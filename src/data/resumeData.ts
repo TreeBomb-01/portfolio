@@ -108,8 +108,8 @@ export const projects: Project[] = [
       'MSA 환경을 기반으로 실시간 그룹 채팅, 커뮤니티 게시판, 학습 트래킹 기능을 하나로 통합한 공시생 맞춤형 스터디 플랫폼입니다.',
     category: '사이드 프로젝트',
     period: '2025.12 ~ 현재 진행 중',
-    team: 'FE(2), BE(4), DevOps(2), AI(2) — 총 10인',
-    role: 'BE-DevOps (1인)',
+    team: 'DevOps(1), FE(1), FE·BE(1), BE·AI(2), BE·DevOps(1) — 총 6인',
+    role: 'BE-DevOps',
     technologies: [
       'Java 21',
       'Spring Boot 3.4',
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     category: 'K-디지털 챌린지 NET 챌린지 캠프 시즌 12',
     period: '2025.07 ~ 2025.11',
     team: 'FE-AI-팀장(1), BE-DevOps(1) — 총 2인',
-    role: 'BE-DevOps (1인)',
+    role: 'BE-DevOps',
     award: '은상 (국가보안기술연구소 소장상)',
     technologies: [
       'Java 17',
