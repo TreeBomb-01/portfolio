@@ -65,10 +65,10 @@ export const values = [
   },
   {
     number: '03',
-    title: '기술과 AI를 맹신하지 않고 주도권을 쥐고 개발합니다',
+    title: '모르는 것을 인정하고, 더 나은 방향으로 빠르게 움직입니다',
     description:
-      '생산성을 위해 AI를 활용하지만, 코드에 대한 최종 통제권은 잃지 않습니다. AI가 제안한 코드와 기존 설계 방식을 꼼꼼히 대조하여 프로젝트에 가장 효율적인 솔루션을 도출합니다. 비판적인 시각으로 기술을 검토하며, 명확히 이해하고 책임질 수 있는 로직만 프로덕션에 반영합니다.',
-    keyword: 'Critical Thinking',
+      '완벽한 척하지 않습니다. 막히는 부분은 명확히 인정하고, 공식 문서를 직접 찾아 파고들며 스스로 답을 찾습니다. 선배 개발자의 코드 리뷰와 피드백을 성장의 연료로 삼고, 어제보다 나은 코드를 작성하는 것을 목표로 합니다. 신입이기에 모든 걸 알 수는 없지만, 배우는 속도와 태도만큼은 누구에게도 뒤지지 않겠습니다.',
+    keyword: 'Growth Mindset',
   },
 ]
 
@@ -83,7 +83,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: 'Database',
-    skills: ['MySQL', 'PostgreSQL', 'Redis'],
+    skills: ['Oracle', 'MySQL', 'PostgreSQL', 'Redis'],
   },
   {
     category: 'DevOps / Infra',

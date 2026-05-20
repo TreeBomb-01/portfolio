@@ -5,7 +5,7 @@ import { contactInfo, skillGroups } from '@/data/resumeData'
 const HERO_SKILLS = [
   { label: 'Languages', value: 'Java · Python · JavaScript' },
   { label: 'Frameworks', value: 'Spring Boot · FastAPI · React' },
-  { label: 'Database', value: 'MySQL · PostgreSQL · Redis' },
+  { label: 'Database', value: 'Oracle · MySQL · PostgreSQL · Redis' },
   { label: 'DevOps', value: 'Docker · Jenkins · OpenStack' },
   { label: 'Libraries & Tools', value: 'WebClient · WebSocket · FFmpeg · OpenCV · MinIO', full: true },
 ]

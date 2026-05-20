@@ -309,7 +309,7 @@ export const projectsData: Project[] = [
 // 스킬 데이터
 export const skillCategories: SkillCategory[] = [
   { title: "🛠 백엔드 개발", description: "안정적이고 확장 가능한 서버 시스템 구축", skills: ["Java", "Spring Boot", "FastAPI", "Python"] },
-  { title: "🗄 데이터베이스 & 캐싱", description: "효율적인 데이터 저장 및 관리 시스템 설계", skills: ["MySQL", "PostgreSQL", "Redis"] },
+  { title: "🗄 데이터베이스 & 캐싱", description: "효율적인 데이터 저장 및 관리 시스템 설계", skills: ["Oracle", "MySQL", "PostgreSQL", "Redis"] },
   { title: "☁️ DevOps & 인프라", description: "CI/CD 파이프라인과 배포 자동화, 인프라 구축", skills: ["Docker", "Jenkins", "MinIO", "Proxmox", "OpenStack"] },
   { title: "💡 기타", description: "개발 생산성과 품질 향상을 위한 기술", skills: ["TDD", "WebSocket", "OpenCV", "Git"] }
 ]
